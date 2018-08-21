@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: springboot4war
+server:
+  context-path: /
+  port: 8080
