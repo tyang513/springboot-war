@@ -10,7 +10,7 @@
     <modules>
         <module>springboot.war.demo</module>
         <module>springboot.adminserver.demo</module>
-        <module>sprongbootlogger</module>
+        <module>sprongboot.logger</module>
     </modules>
 
     <parent>
