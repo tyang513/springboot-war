@@ -1,6 +1,23 @@
 spring:
   application:
     name: springboot4war
+  boot:
+      admin:
+        client:
+          url: http://localhost:8081
 server:
-  context-path: /
+  servlet:
+    context-path: /
   port: 8080
+management:
+  security:
+    enabled: false
+  endpoints:
+      web:
+        exposure:
+          include: "*"
+  endpoint:
+      health:
+        show-details: ALWAYS
+logging:
+  file: /Users/yangtao/workspace/springboot4war/springboot.war.demo.log

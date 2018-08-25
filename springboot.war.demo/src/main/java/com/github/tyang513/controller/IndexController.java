@@ -34,8 +34,23 @@ public class IndexController {
         ChangleLoggerLevelProcessUnit processUnit = new ChangleLoggerLevelProcessUnit();
         processUnit.initLoggerFramework();
         String loggerList = processUnit.getLoggerList();
-        processUnit.setLogLevel("{\"loggerFramework\":\"logback\",\"loggerList\":[{\"loggerName\":\"ROOT\",\"loggerLevel\":\"" + loggerLevel + "\"}]}");
+        processUnit.setLogLevel("{\"loggerFramework\":\"log4j\",\"loggerList\":[{\"loggerName\":\"root\",\"loggerLevel\":\"" + loggerLevel + "\"}]}");
         return loggerLevel;
+    }
+
+
+
+    @RequestMapping(value = "/exception", method = RequestMethod.GET)
+    @ResponseBody
+    public void exception(String loggerLevel){
+        try{
+            Integer i = null;
+            System.out.println(i.toString());
+        }
+        catch (Exception e){
+            logger.error("空指针异常", e);
+        }
+
     }
 
 }
